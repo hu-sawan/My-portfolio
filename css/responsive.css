@@ -39,7 +39,7 @@
 		left: 15%;
 	}
 	.effect-5 {
-		right: 4%;
+		right: 8%;
 	}
 	.about-section .about-img {
 		padding-bottom: 30px;
@@ -97,5 +97,11 @@
 	}
 	.contact-section .submit-btn {
 		text-align: center;
+	}
+	.effect-5 {
+		top: 50%;
+	}
+	.effect-4 {
+		top: 13%;
 	}
 }
