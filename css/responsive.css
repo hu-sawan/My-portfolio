@@ -78,6 +78,9 @@
 	.portfolio-popup .description {
 		margin-bottom: 30px;
 	}
+	.about-section .about-img .img-box img {
+		aspect-ratio: 10/6;
+	}
 }
 
 
