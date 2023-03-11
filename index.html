@@ -531,22 +531,22 @@
 				<!-- Contact Form -->
 				<div class="row">
 					<div class="contact-form">
-						<form>
+						<form onsubmit="sendMail()">
 							<div class="row">
 								<div class="w-50">
 									<div class="input-group outer-shadow hover-in-shadow">
-										<input type="text" class="input-control" placeholder="Name">
+										<input type="text" class="input-control" id="formName" placeholder="Name" required>
 									</div>
 									<div class="input-group outer-shadow hover-in-shadow">
-										<input type="email" class="input-control" placeholder="Email">
+										<input type="email" class="input-control" id="formEmail" placeholder="Email" required>
 									</div>
 									<div class="input-group outer-shadow hover-in-shadow">
-										<input type="text" class="input-control" placeholder="Subject">
+										<input type="text" class="input-control" id="formSubject" placeholder="Subject" required>
 									</div>
 								</div>
 								<div class="w-50">
 									<div class="input-group outer-shadow hover-in-shadow">
-										<textarea class="input-control" placeholder="Message"></textarea>
+										<textarea class="input-control" id="formMessage" placeholder="Message" required></textarea>
 									</div>
 								</div>
 							</div>
@@ -632,5 +632,15 @@
 		<script src="js/main.js"></script>
 		<!-- Style Switcher JS -->
 		<script src="js/style-switcher.js"></script>
+		<!-- EmailJs Tool -->
+		<script
+		type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+		</script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init('pGiPlm0lipoKKt5Lr');
+			})();
+		</script>
 	</body>
 </html>
