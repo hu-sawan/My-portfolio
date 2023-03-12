@@ -350,6 +350,10 @@ function sendMail(e) {
     emailjs.send("service_9sk2v3u", "template_1j1806p", tempParams).then(
         function (response) {
             alert("Email sent successfully", response.status, response.text);
+            document.getElementById("formName").value = "";
+            document.getElementById("formEmail").value = "";
+            document.getElementById("formSubject").value = "";
+            document.getElementById("formMessage").value = "";
         },
         function (err) {
             alert(
@@ -358,10 +362,6 @@ function sendMail(e) {
             );
         }
     );
-    document.getElementById("formName").value = "";
-    document.getElementById("formEmail").value = "";
-    document.getElementById("formSubject").value = "";
-    document.getElementById("formMessage").value = "";
 }
 
 /* <============================ Hide Sections Except Active =================================> */
