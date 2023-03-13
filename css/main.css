@@ -1103,8 +1103,6 @@ section.hide {
     text-align: center;
     position: relative;
 }
-.testimonial-section .testi-item.active {
-}
 .testimonial-section .testi-item i {
     position: absolute;
     font-size: 30px;
@@ -1237,6 +1235,77 @@ section.hide {
     padding: 0 15px;
 }
 /* End Contact */
+/* Start Alert */
+.alert {
+    display: none;
+    align-items: center;
+    padding: 0.55rem 0.65rem 0.55rem 0.75rem;
+    border-radius: 1rem;
+    min-width: 300px;
+    justify-content: space-between;
+    box-shadow: 0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
+        0px 7.6px 33.3px rgba(0, 0, 0, 0.028),
+        0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
+        0px 25.7px 111.7px rgba(0, 0, 0, 0.042),
+        0px 48px 208.9px rgba(0, 0, 0, 0.05),
+        0px 115px 500px rgba(0, 0, 0, 0.07);
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 999999;
+}
+.alert .content p {
+    font-size: 14px;
+}
+.alert.active {
+    display: flex;
+    animation: slide-right 0.3s ease-in forwards;
+}
+.alert.out-animation {
+    animation: slide-left 0.3s ease-in forwards;
+}
+.alert .content {
+    display: flex;
+    align-items: center;
+}
+.alert .icon {
+    padding: 0.4rem;
+    margin-right: 0.6rem;
+    border-radius: 39% 61% 42% 58% / 50% 51% 49% 50%;
+    box-shadow: 0px 3.2px 13.8px rgba(0, 0, 0, 0.02),
+        0px 7.6px 33.3px rgba(0, 0, 0, 0.028),
+        0px 14.4px 62.6px rgba(0, 0, 0, 0.035),
+        0px 25.7px 111.7px rgba(0, 0, 0, 0.042),
+        0px 48px 208.9px rgba(0, 0, 0, 0.05),
+        0px 115px 500px rgba(0, 0, 0, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alert .alert-close {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alert .alert-close:hover {
+    background-color: #fff;
+}
+.alert.success {
+    background-color: rgb(62, 189, 98);
+    border: 2px solid #3ebd61;
+}
+.alert.warning {
+    background-color: rgb(239, 147, 0);
+    border: 2px solid #ef9400;
+}
+/* End Alert */
 /* Start Animation */
 @keyframes spin {
     0% {
@@ -1289,5 +1358,21 @@ section.hide {
     }
     50% {
         transform: translateY(-30px);
+    }
+}
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
     }
 }

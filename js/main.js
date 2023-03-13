@@ -339,6 +339,10 @@ function bodyScrollingToggle() {
 
 /* <============================ Contact Section =================================> */
 
+let successAlert = document.querySelector(".success"),
+    warningAlert = document.querySelector(".warning"),
+    alertClose = document.querySelectorAll(".alert-close");
+
 // send email to my personal email using EmailJS tool https://www.emailjs.com/
 function sendMail(e) {
     var tempParams = {
@@ -349,17 +353,53 @@ function sendMail(e) {
     };
     emailjs.send("service_9sk2v3u", "template_1j1806p", tempParams).then(
         function (response) {
-            alert("Email sent successfully", response.status, response.text);
+            successAlert.classList.add("active");
+
+            const timeOut = setTimeout(() => {
+                successAlert.classList.add("out-animation");
+                setTimeout(() => {
+                    successAlert.classList.remove("out-animation");
+                    successAlert.classList.remove("active");
+                }, 300);
+            }, 6000);
+
+            alertClose[0].addEventListener("click", () => {
+                clearTimeout(timeOut);
+                alertClose[0].parentElement.classList.add("out-animation");
+                setTimeout(() => {
+                    alertClose[0].parentElement.classList.remove(
+                        "out-animation"
+                    );
+                    alertClose[0].parentElement.classList.remove("active");
+                }, 300);
+            });
+
             document.getElementById("formName").value = "";
             document.getElementById("formEmail").value = "";
             document.getElementById("formSubject").value = "";
             document.getElementById("formMessage").value = "";
         },
         function (err) {
-            alert(
-                "Email not sent please make sure info are correct then try again <3",
-                err
-            );
+            warningAlert.classList.add("active");
+
+            const timeOut = setTimeout(() => {
+                warningAlert.classList.add("out-animation");
+                setTimeout(() => {
+                    warningAlert.classList.remove("out-animation");
+                    warningAlert.classList.remove("active");
+                }, 300);
+            }, 6000);
+
+            alertClose[1].addEventListener("click", () => {
+                clearTimeout(timeOut);
+                alertClose[1].parentElement.classList.add("out-animation");
+                setTimeout(() => {
+                    alertClose[1].parentElement.classList.remove(
+                        "out-animation"
+                    );
+                    alertClose[1].parentElement.classList.remove("active");
+                }, 300);
+            });
         }
     );
 }
