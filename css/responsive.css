@@ -111,7 +111,16 @@
     .effect-4 {
         top: 13%;
     }
+    .about-section .about-img .img-box img {
+        aspect-ratio: 10/8;
+    }
     .alert {
         min-width: calc(100% - 10px);
+    }
+    .alert.active {
+        animation-name: slide-down;
+    }
+    .alert.out-animation {
+        animation-name: slide-up;
     }
 }
