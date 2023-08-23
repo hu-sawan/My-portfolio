@@ -297,9 +297,9 @@ function bodyScrollingToggle() {
         activeSlide
     );
 
-    // set the width 	of all slides
+    // set the width of all slides
     slides.forEach((slide) => {
-        slide.style.width = slideWidth + "px";
+        slide.style.width = `${slideWidth}px`;
     });
     // set width for sliderContainer
     sliderContainer.style.width = slideWidth * slides.length + "px";
