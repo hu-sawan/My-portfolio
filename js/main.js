@@ -345,6 +345,7 @@ let successAlert = document.querySelector(".success"),
 
 // send email to my personal email using EmailJS tool https://www.emailjs.com/
 function sendMail(e) {
+    e.preventDefault();
     var tempParams = {
         from_name: document.getElementById("formName").value,
         email_id: document.getElementById("formEmail").value,
