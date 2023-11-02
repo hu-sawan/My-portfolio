@@ -353,7 +353,7 @@ function sendMail(e) {
         message: document.getElementById("formMessage").value,
     };
     emailjs.send("service_9sk2v3u", "template_1j1806p", tempParams).then(
-        function (response) {
+        (response) => {
             successAlert.classList.add("active");
 
             const timeOut = setTimeout(() => {
@@ -380,7 +380,7 @@ function sendMail(e) {
             document.getElementById("formSubject").value = "";
             document.getElementById("formMessage").value = "";
         },
-        function (err) {
+        (err) => {
             warningAlert.classList.add("active");
 
             const timeOut = setTimeout(() => {
